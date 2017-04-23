@@ -1,0 +1,10 @@
+---
+- name: Apply database
+  hosts: postgres
+  roles:
+   - postgres
+
+- name: Apply Pgpool
+  hosts: pgpool
+  roles:
+   - pgpool
