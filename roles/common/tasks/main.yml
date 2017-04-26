@@ -1,0 +1,14 @@
+---
+- name: Install epel
+  package: name=epel-release state=latest
+  become: true
+
+- name: Disable Selinux
+  selinux:
+    policy: targeted
+    state: permissive
+  become: true
+
+- name: Install postgres-repo RPM
+  package: name=https://yum.postgresql.org/9.6/redhat/rhel-7.2-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+  become: true

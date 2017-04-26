@@ -1,1 +1,24 @@
 ansible_user: "centos"
+
+postgresql:
+  version: 9.6
+
+  user: postgres
+  group: postgres
+
+
+pgpool:
+  user: postgres
+  group: postgres
+
+  config:
+    database_host: 127.0.0.1
+    database_port: 5432
+
+    listen_addr: 127.0.0.1
+    listen_port: 6432
+
+    user: postgres
+
+    auth_type: md5
+    auth_file: /etc/pgbouncer/userlist.txt

@@ -1,0 +1,18 @@
+---
+- name: Postgres Service Config
+  template:
+    src: postgres_service.j2
+    dest: /etc/systemd/system/multi-user.target.wants/postgresql-9.6.service
+  become: True
+
+- name: Postgres pg_hba
+  template:
+    src: pg_hba.j2
+    dest: /var/lib/pgsql/9.6/data/pg_hba.conf
+  become: True
+
+- name: Postgres Conf
+  template:
+    src: postgresql.j2
+    dest: /var/lib/pgsql/9.6/data/postgresql.conf
+  become: True

@@ -2,9 +2,11 @@
 - name: Apply database
   hosts: postgres
   roles:
+   - common
    - postgres
 
 - name: Apply Pgpool
   hosts: pgpool
   roles:
+   - common
    - pgpool
