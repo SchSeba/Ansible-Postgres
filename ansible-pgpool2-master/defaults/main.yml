@@ -1,11 +1,12 @@
-ansible_user: "centos"
+---
 
-postgresql:
-  version: 9.6
+pgpool2_packages:
+  - pgpool2
+  - rsync
+  - arping
+  - postgresql-client
 
-  user: postgres
-  group: postgres
-
+pgpool2_package_state: present
 pgpool2_user: postgres
 pgpool2_group: postgres
 pgpool2_confdir: /etc/pgpool2
