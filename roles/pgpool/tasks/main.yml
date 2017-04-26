@@ -6,10 +6,15 @@
    - pgpool-II-96
    - pgpoolAdmin
 
- - name: short command wrapper
-   template:
+- name: short command wrapper
+  template:
      src: pcpctl.j2
      dest: /usr/local/bin/pcpctl
      owner: root
      group: root
      mode: 0755
+
+- name: attach all pg nodes
+  command: " /usr/local/bin/pcpctl {{ item }} "
+  with_items:
+     postgres
