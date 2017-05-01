@@ -2,7 +2,7 @@
 - name: Postgres Service Config
   template:
     src: postgres_service.j2
-    dest: /etc/systemd/system/multi-user.target.wants/postgresql-9.6.service
+    dest: /usr/lib/systemd/system/multi-user.target.wants/postgresql-9.6.service
   become: True
 
 - name: Postgres pg_hba

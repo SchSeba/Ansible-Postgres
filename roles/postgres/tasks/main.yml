@@ -22,6 +22,14 @@
   shell: /usr/pgsql-9.6/bin/postgresql96-setup initdb
   when: folder.stdout == "1"
 
+#- name: debug - host
+#  debug:
+#    msg: "{{ host }}"
+
+- name: debug - hostvars
+  debug:
+    msg: "{{ groups['postgres'] }}"
+
 - include: configuration.yml
 
 - name: Enable postgres service

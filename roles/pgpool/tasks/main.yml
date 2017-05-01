@@ -15,6 +15,5 @@
      mode: 0755
 
 - name: attach all pg nodes
-  command: " /usr/local/bin/pcpctl {{ item }} "
-  with_items:
-     postgres
+  command: " /usr/local/bin/pcpctl attach {{ item }} "
+  with_items: "{{ groups['postgres'] }}"

@@ -87,6 +87,6 @@ host    all             all             ::1/128                 md5
 #local   replication     postgres                                peer
 #host    replication     postgres        127.0.0.1/32            ident
 #host    replication     postgres        ::1/128                 ident
-{% for node in postgres %}
+{% for node in groups['postgres'] %}
 host    replication     postgres_rep    {{ node }}        md5
 {% endfor %}
